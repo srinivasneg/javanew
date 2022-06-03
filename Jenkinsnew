@@ -3,4 +3,17 @@ agent any
 stages {
 stage (gitcheckout)
 step {
-git clone
+git clone https://github.com/srinivasneg/javanew.git
+}
+stage (build)
+{
+step (build)
+mvn clean package
+}
+stage (deploy)
+step ()
+{
+scp source destination
+tomcat service start
+}
+}
